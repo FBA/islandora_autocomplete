@@ -1115,6 +1115,7 @@
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;Use [This Other Resource] Instead.&quot; Traditional &quot;USE&quot; reference.</rdfs:comment>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use Instead</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.loc.gov/mads/rdf/v1#see"></rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="http://www.loc.gov/mads/rdf/v1#useFor"></owl:inverseOf>    
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://www.loc.gov/mads/rdf/v1#variantLabel">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"></rdf:type>

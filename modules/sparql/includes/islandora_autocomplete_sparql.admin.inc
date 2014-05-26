@@ -67,9 +67,16 @@ function islandora_autocomplete_sparql_form(array &$form_state, $url_id = NULL) 
     '#default_value' => $row->subject_namespace_info ? $row->subject_namespace_info : '',
   );
 
+  $form['subject_xpath_title_search'] = array(
+    '#type' => 'textarea',
+    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the XPath for the title element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream, this would be "/mads:mads/mads:authority/mads:topic"'),
+    '#title' => t('Subject XPath Title Search'),
+    '#default_value' => $row->subject_xpath_title_search ? $row->subject_xpath_title_search : '',
+  );
+
   $form['subject_xpath_data_search'] = array(
     '#type' => 'textarea',
-    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the XPath for the element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream,  for a broader term this would be "/mads:mads:mads:related[@type="broader"]", and for a related term this would be "/mads:mads/mads:related[not(@*)]/mads:topic"'),
+    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the XPath for the element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream,  for a broader term this would be "/mads:mads/mads:related[@type="broader"]/mads:topic", and for a related term this would be "/mads:mads/mads:related[not(@*)]/mads:topic"'),
     '#title' => t('Subject XPath Data Search'),
     '#default_value' => $row->subject_xpath_data_search ? $row->subject_xpath_data_search : '',
   );
@@ -233,6 +240,7 @@ function islandora_autocomplete_sparql_form_submit(array $form, array &$form_sta
           'object_pid_append_required' => $object_pid_append_required,
           'subject_dsid' => $subject_dsid ? $subject_dsid : '',
           'subject_namespace_info' => $subject_namespace_info ? trim($subject_namespace_info) : '',
+          'subject_xpath_title_search' => $subject_xpath_title_search ? trim($subject_xpath_title_search) : '',
           'subject_xpath_data_search' => $subject_xpath_data_search ? trim($subject_xpath_data_search) : '',
           'object_creation_required' => $object_creation_required,
           'inverse_required' => $inverse_required,

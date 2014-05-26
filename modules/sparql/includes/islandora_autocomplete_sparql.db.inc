@@ -57,6 +57,7 @@ function islandora_autocomplete_sparql_db_add_url_source($url_id, $values) {
     $object->object_pid_append_required = $object_pid_append_required;
     $object->subject_dsid = $subject_dsid ? trim($subject_dsid) : '';
     $object->subject_namespace_info = $subject_namespace_info ? trim($subject_namespace_info) : '';
+    $object->subject_xpath_title_search = $subject_xpath_title_search ? trim($subject_xpath_title_search) : '';
     $object->subject_xpath_data_search = $subject_xpath_data_search ? trim($subject_xpath_data_search) : '';
     $object->object_creation_required = $object_creation_required;
     $object->inverse_required = $inverse_required;
@@ -105,6 +106,7 @@ function islandora_autocomplete_sparql_db_update_url_source($id, $url_id, $value
     $object->object_pid_append_required = $object_pid_append_required;
     $object->subject_dsid = $subject_dsid ? trim($subject_dsid) : '';
     $object->subject_namespace_info = $subject_namespace_info ? trim($subject_namespace_info) : '';
+    $object->subject_xpath_title_search = $subject_xpath_title_search ? trim($subject_xpath_title_search) : '';
     $object->subject_xpath_data_search = $subject_xpath_data_search ? trim($subject_xpath_data_search) : '';
     $object->object_creation_required = $object_creation_required;
     $object->inverse_required = $inverse_required;
