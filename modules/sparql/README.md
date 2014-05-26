@@ -2,17 +2,17 @@
 ===================================================== 
 
 This README file is for the "Sparql Submodule" of the "Islandora Autocomplete
-Module" .The "Sparql Submodule" is also a component of the "FBA Object Linker
+Module" .The "Sparql Submodule" is just one component of the "FBA Object Linker
 Module", and because the code for the "FBA Object Linker Module" is spread
-across a number of other existing modules, this README file also serves as
+across a number of other existing modules, this README file primarily serves as
 the README file for that module.
 
-Dependecies:
+Prerequisites for the FBA Object Linker Module:
 
 Islandora-6.x-13.1
 Tuque-1.x
 PHP 5.3.3+
-ARC2 (this is included as part of the download at https://github.com/FBA/islandora_autocomplete/tree/6.x/modules/sparql/arc)
+arc2
 
 Installation Instructions:
 
@@ -29,8 +29,12 @@ Administrator Module.
 If you already have the "Islandora Autocomplete Module"
 enabled on your system, unzip the file in a temporary location and zip the
 contents of only the sparql folder and unzip that in the
-"/sites/all/modules/islandora_autocomplete/modules" folder. Enable the
-sparql submodule in the "/admin/build/modules" section of the Administration
+"/sites/all/modules/islandora_autocomplete/modules" folder.
+
+Download the zip file from https://github.com/semsol/arc2, unzip it and copy the arc2 folder into the "modules/sparql/includes" folder.
+
+Enable the sparql submodule in the "/admin/build/modules" section
+of the Administration Module.
 Module.
 
 To install the rest of the "FBA Object Linker" Module:
