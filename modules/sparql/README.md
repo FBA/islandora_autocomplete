@@ -85,6 +85,8 @@ Create a new datastream in this object with the following settings:
 
 "MIME Type" of "text/xml"
 
+"Label" of "ONTOLOGY"
+
 "Checksum" set to "DISABLED"
 
 Import into the new datastream the XML contained in the file:
