@@ -7,6 +7,10 @@ Module", and because the code for the "FBA Object Linker Module" is spread
 across a number of other existing modules, this README file primarily serves as
 the README file for that module.
 
+The "FBA Object Linker Module" uses some of the ontology processing developed
+by Giancoralo Birello of CNR-Ceris and Rosemary Le Faive of McGill University
+in the Islandora Relationship Editor module.
+
 Prerequisites for the FBA Object Linker Module:
 
 Islandora-6.x-13.1
