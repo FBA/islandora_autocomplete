@@ -69,14 +69,14 @@ function islandora_autocomplete_sparql_form(array &$form_state, $url_id = NULL) 
 
   $form['subject_xpath_title_search'] = array(
     '#type' => 'textarea',
-    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the XPath for the title element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream, this would be "/mads:mads/mads:authority/mads:topic"'),
+    '#description' => t('If RDF linking is required, this is a mandatory field. Enter as much of the XPath for the title as is present as a continuous string in the "Read"-"Path:" field of the XML-Form to which this autocomplete is to be attached, e.g. in the case of "FBA Vocab Form", this would bei the full "/mads:mads/mads:authority/mads:topic". However, in the case of the "Islandora PDF MODS Form" it would be "/mods:mods/mods:titleInfo" rather than the full "/mods:mods/mods:titleInfo/mods:title". The reason for this is that processing for this particular field involves string matching on the contents of the XML-Form rather than an XPath search on XML.'),
     '#title' => t('Subject XPath Title Search'),
     '#default_value' => $row->subject_xpath_title_search ? $row->subject_xpath_title_search : '',
   );
 
   $form['subject_xpath_data_search'] = array(
     '#type' => 'textarea',
-    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the XPath for the element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream,  for a broader term this would be "/mads:mads/mads:related[@type="broader"]/mads:topic", and for a related term this would be "/mads:mads/mads:related[not(@*)]/mads:topic"'),
+    '#description' => t('If RDF linking is required, this is a mandatory field (unless there is no data corresponding to this relationship and this autocomplete is only present so that link-unwinding occurs on a purge action, in which case this field should be left blank). Enter the XPath for the element in the datastream to which this autocomplete is to be attached, e.g. in the case of a MADS datastream,  for a broader term this would be "/mads:mads/mads:related[@type="broader"]/mads:topic", and for a related term this would be "/mads:mads/mads:related[not(@*)]/mads:topic"'),
     '#title' => t('Subject XPath Data Search'),
     '#default_value' => $row->subject_xpath_data_search ? $row->subject_xpath_data_search : '',
   );
@@ -111,7 +111,7 @@ function islandora_autocomplete_sparql_form(array &$form_state, $url_id = NULL) 
 
   $form['object_content_model_pid'] = array(
     '#type' => 'textfield',
-    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the PID of the Content Model associated with the objects that are to be created if they do not already exist e.g. "fba:vocabpref_CModel"'),
+    '#description' => t('If RDF linking is required, this is a mandatory field. Enter the PID of the Content Model associated with the objects that are to be linked to or, when applicable, created if they do not already exist e.g. "fba:vocabpref_CModel"'),
     '#title' => t('Object Content Model PID'),
     '#default_value' => $row->object_content_model_pid ? $row->object_content_model_pid : '',
   );
