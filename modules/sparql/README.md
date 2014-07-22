@@ -94,7 +94,7 @@ Create a new datastream in this object with the following settings:
 "Checksum" set to "DISABLED"
 
 Import into the new datastream the XML contained in the file:
-/islandora_autocomplete/modules/sparql/xml/mads_plus_fba_ontology.xml
+/islandora_autocomplete/modules/sparql/xml/mads_plus_fba_ontology.rdf
 
 The mads_plus_fba_ontology.xml file contains a combination of MADS-RDF
 statements and RDF statements created by the FBA.
